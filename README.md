@@ -1,6 +1,21 @@
 # Fashion-MNIST Image Classification Using Fully Connected Neural Networks
 [![Open In Colab](https://colab.research.google.com/assets/colab-badge.svg)](https://colab.research.google.com/github/robrj017/fashion-mnist-fcnn/blob/main/fashion_mnist_fcnn.ipynb)
 
+## Results at a Glance
+
+| Metric | Result |
+|---|---:|
+| Best Validation Accuracy | **90.67%** |
+| Final Test Accuracy | **88.97%** |
+| Test Loss | **0.3172** |
+| Generalization Gap | **1.45 percentage points** |
+| Expected Calibration Error | **0.0230** |
+| Highly Confident Errors | **194 / 1,103** |
+
+**Best Model:** Dropout-regularized FCNN (512 → 256 → 128 → 10)
+
+The experiments show that Dropout provided a more meaningful improvement than simply increasing network depth, while the final analysis also examined error patterns, confidence, calibration, and generalization.
+
 ## About The Project
 
 This project explores how well Fully Connected Neural Networks (FCNNs) can perform on the Fashion-MNIST image classification problem.
