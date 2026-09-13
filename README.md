@@ -1,6 +1,7 @@
-Fashion-MNIST Image Classification Using Fully Connected Neural Networks
+# Fashion-MNIST Image Classification Using Fully Connected Neural Networks
+[![Open In Colab](https://colab.research.google.com/assets/colab-badge.svg)](https://colab.research.google.com/github/robrj017/fashion-mnist-fcnn/blob/main/fashion_mnist_fcnn.ipynb)
 
-About The Project
+## About The Project
 
 This project explores how well Fully Connected Neural Networks (FCNNs) can perform on the Fashion-MNIST image classification problem.
 
@@ -9,13 +10,13 @@ Instead of training just one model and reporting its accuracy, I followed a stru
 The main goal was to understand how model complexity, regularization, and optimization affect performance and generalization.
 
 
-ABOUT THE DATASET
+## ABOUT THE DATASET
 
 Fashion-MNIST is a dataset of 70,000 grayscale images of clothing and fashion items.
 
 Each image is 28 × 28 pixels, grayscale, and belongs to one of 10 classes.
 
-The 10 classes are:
+### The 10 classes are:
 1. T-shirt/top
 2. Trouser
 3. Pullover
@@ -30,7 +31,7 @@ The 10 classes are:
 The dataset contains 60,000 training images and 10,000 test images.
 
 
-WHAT I TRIED
+### WHAT I TRIED
 
 The project was built as a series of controlled experiments.
 
@@ -87,7 +88,7 @@ Finally, I compared two learning rates using the Dropout architecture:
 The architecture and regularization settings were kept unchanged so that the effect of the learning rate could be studied separately.
 
 
-MODEL SELECTION
+## MODEL SELECTION
 
 The dataset was divided into training, validation, and test data.
 
@@ -98,7 +99,7 @@ The test set was kept separate and was used only after model selection.
 This prevents the test data from influencing the model-selection process.
 
 
-RESULTS
+## RESULTS
 
 The current experiments produced the following validation results:
 
@@ -110,7 +111,7 @@ Dropout + Learning Rate 0.001: 87.43%
 
 The Dropout model achieved the highest validation accuracy and was selected as the final model.
 
-Final Test Results
+## Final Test Results
 
 Test Accuracy: 88.97%
 Test Loss: 0.3172
@@ -121,7 +122,7 @@ Highly Confident Errors: 194
 High-Confidence Error Rate: 17.59%
 
 
-WHAT THE RESULTS SHOW
+## WHAT THE RESULTS SHOW
 
 One of the main observations from the experiments is that simply making the network deeper did not provide a very large improvement.
 
@@ -136,7 +137,7 @@ The lower learning rate of 0.001 also performed worse than the original 0.01 con
 The selected Dropout model achieved 88.97% accuracy on the unseen test set, giving a generalization gap of approximately 1.45 percentage points.
 
 
-ERROR ANALYSIS
+## ERROR ANALYSIS
 
 I did not stop at accuracy. The final model was also analyzed in more detail.
 
@@ -149,7 +150,7 @@ The confusion matrix was further analyzed to identify the class pairs responsibl
 The error rate for each class was also calculated to identify categories that were more difficult for the model.
 
 
-PREDICTION CONFIDENCE
+## PREDICTION CONFIDENCE
 
 The model's prediction confidence was also analyzed.
 
@@ -160,7 +161,7 @@ That means the model can sometimes be very confident even when it is wrong.
 This is an important observation because accuracy alone does not tell us how reliable a model's confidence estimates are.
 
 
-CONFIDENCE CALIBRATION
+## CONFIDENCE CALIBRATION
 
 To investigate prediction reliability, I used a reliability diagram and Expected Calibration Error (ECE).
 
@@ -173,7 +174,7 @@ A lower ECE generally indicates that predicted confidence is closer to the model
 The calibration analysis therefore provides another perspective on model reliability beyond classification accuracy.
 
 
-TRAINING AND OVERFITTING ANALYSIS
+## TRAINING AND OVERFITTING ANALYSIS
 
 Training and validation accuracy and loss were tracked during training.
 
@@ -182,7 +183,7 @@ These curves were used to examine learning behavior, validation performance, ove
 Early stopping was used to restore the best model weights based on validation loss.
 
 
-LIMITATIONS OF THE APPROACH
+## LIMITATIONS OF THE APPROACH
 
 Although the FCNN performs well on Fashion-MNIST, fully connected networks are not specifically designed for image data.
 
@@ -204,7 +205,7 @@ TECHNOLOGIES USED
 • Google Colab
 
 
-PROJECT STRUCTURE
+## PROJECT STRUCTURE
 
 fashion-mnist-fcnn/
 │
@@ -214,7 +215,7 @@ fashion-mnist-fcnn/
 The notebook contains the complete workflow, including data exploration, preprocessing, model development, experimentation, evaluation, error analysis, and inference.
 
 
-HOW TO RUN
+## HOW TO RUN
 
 The project was developed in Google Colab.
 
@@ -227,7 +228,7 @@ For a local environment, the main dependencies can be installed with:
 pip install tensorflow numpy matplotlib seaborn scikit-learn
 
 
-FUTURE IMPROVEMENTS
+## FUTURE IMPROVEMENTS
 
 There are several ways this project could be extended:
 
@@ -240,7 +241,7 @@ There are several ways this project could be extended:
 • Deploy the final model as a small web application
 
 
-CONCLUSION
+## CONCLUSION
 
 This project was designed to understand not just how accurate a Fully Connected Neural Network can be on Fashion-MNIST, but also how different modeling decisions affect its behavior.
 
